@@ -30,3 +30,4 @@ const Card = ({ el }) => {
 };
 
 export default React.memo(Card);
+

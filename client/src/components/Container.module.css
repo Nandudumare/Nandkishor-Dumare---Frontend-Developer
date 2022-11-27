@@ -10,6 +10,33 @@
   grid-template-columns: repeat(3, 30%);
   grid-template-rows: repeat(auto, auto);
 }
+.pagination_div {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  justify-content: right;
+  align-items: right;
+  align-content: right;
+  width: 80%;
+}
+.pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.pagination > svg {
+  cursor: pointer;
+}
+
+.page {
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
 
 @media (max-width: 1247px) {
   .container {
