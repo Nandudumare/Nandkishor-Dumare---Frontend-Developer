@@ -4,12 +4,14 @@ import Styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <div className={Styles.navbar}>
-      <div></div>
-      <div>
-        <GiHamburgerMenu />
+    <nav>
+      <div className={Styles.navbar}>
+        <div></div>
+        <div>
+          <GiHamburgerMenu />
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

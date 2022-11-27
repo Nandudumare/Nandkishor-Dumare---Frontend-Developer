@@ -1,5 +1,7 @@
 import "./App.css";
 import Banner from "./components/Banner";
+import Container from "./components/Container";
+import Filters from "./components/Filters";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -7,6 +9,8 @@ function App() {
     <div>
       <Navbar />
       <Banner />
+      <Filters />
+      <Container />
     </div>
   );
 }
