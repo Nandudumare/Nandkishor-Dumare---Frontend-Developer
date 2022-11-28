@@ -28,7 +28,7 @@ const Card = ({ el }) => {
           <p>ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {el.capsule_id}</p>
           <p>Details : {el.details}</p>
           <p>Status &nbsp;: {el.status}</p>
-          <p>Launch &nbsp;: {Date(el.original_launch)}</p>
+          <p>Launch &nbsp;: {new Date(el.original_launch).toString()}</p>
           <p>Type &nbsp;&nbsp;&nbsp;: {el.type}</p>
           <p>
             Missions:

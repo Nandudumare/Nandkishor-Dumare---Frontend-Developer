@@ -55,6 +55,7 @@ export const AppContextProvider = ({ children }) => {
 
   useEffect(() => {
     getData();
+    // eslint-disable-next-line
   }, [page, status, type, date]);
 
   const value = {
@@ -72,5 +73,3 @@ export const AppContextProvider = ({ children }) => {
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
-
-//page * itemsPerPage + 1

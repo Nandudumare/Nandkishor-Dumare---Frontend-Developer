@@ -3,11 +3,7 @@ import { AppContext } from "../context/AppContext";
 import Styles from "./Filters.module.css";
 
 const Filters = () => {
-  const { setPage, setStatus, status, setDate, setType, date, type } =
-    useContext(AppContext);
-  console.log("date:", date);
-  console.log("type:", type);
-  console.log("status:", status);
+  const { setPage, setStatus, setDate, setType } = useContext(AppContext);
 
   return (
     <div className={Styles.filters}>

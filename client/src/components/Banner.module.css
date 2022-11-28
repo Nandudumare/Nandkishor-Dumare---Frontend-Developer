@@ -6,7 +6,6 @@ body {
 .banner {
   height: 500px;
   width: 100%;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -17,7 +16,6 @@ body {
 .banner > div {
   height: 100%;
   width: 40%;
-  /* border: 1px solid green; */
 }
 
 .banner > div:nth-child(1) {

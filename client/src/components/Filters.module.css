@@ -1,12 +1,10 @@
 .filters {
   width: 84%;
-  /* border: 1px solid red; */
   margin: auto;
 }
 
 .filters_div {
   display: flex;
-  /* border: 1px solid red; */
   width: 80%;
   gap: 2rem;
 }
@@ -50,6 +48,5 @@
   background-color: transparent;
   padding: 0.5rem 3rem;
   margin-top: 1.2rem;
-
   cursor: pointer;
 }
