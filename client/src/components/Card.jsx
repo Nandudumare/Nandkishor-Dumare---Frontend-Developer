@@ -1,10 +1,57 @@
 import React from "react";
+import { useRef } from "react";
+import { useState } from "react";
 
 import Styles from "./Card.module.css";
 
 const Card = ({ el }) => {
-  return (
-    <div className={Styles.card}>
+  const [model, setModel] = useState(false);
+
+  const modelRef = useRef();
+
+  window.onclick = function (event) {
+    if (event.target === modelRef.current) {
+      setModel(false);
+    }
+  };
+
+  return model ? (
+    <div ref={modelRef} className={Styles.modal}>
+      <div className={Styles.modal_content}>
+        <div className={Styles.modal_header}>
+          <span className={Styles.close} onClick={() => setModel(false)}>
+            &times;
+          </span>
+          <h2>{el.capsule_serial}</h2>
+        </div>
+        <div className={Styles.modal_body}>
+          <p>ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {el.capsule_id}</p>
+          <p>Details : {el.details}</p>
+          <p>Status &nbsp;: {el.status}</p>
+          <p>Launch &nbsp;: {Date(el.original_launch)}</p>
+          <p>Type &nbsp;&nbsp;&nbsp;: {el.type}</p>
+          <p>
+            Missions:
+            <span>
+              {el.missions &&
+                el.missions.map((elm) => {
+                  return (
+                    <div
+                      className={Styles.missions}
+                      key={elm.name + Math.random()}
+                    >
+                      <p>Name : {elm.name}</p>
+                      <p>Flight : {elm.flight}</p>
+                    </div>
+                  );
+                })}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div className={Styles.card} onClick={() => setModel(true)}>
       <div>
         Serial :&nbsp;
         <span className={Styles.serial}>{el.capsule_serial} </span>
@@ -16,7 +63,7 @@ const Card = ({ el }) => {
       <div>
         Launch :&nbsp;
         <span className={Styles.serial}>
-          {Date(el.original_launch).slice(0, 15)}
+          {new Date(el.original_launch).toString().slice(0, 15)}
         </span>
       </div>
       <div>
@@ -30,4 +77,3 @@ const Card = ({ el }) => {
 };
 
 export default React.memo(Card);
-
